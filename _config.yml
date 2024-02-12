@@ -17,7 +17,7 @@
 title: VeeMax
 email: maxime@veemax.be
 description: >- # this means to ignore newlines until "baseurl:"
-  VeeMax is Maxime Vincent's embedded software and hardware consulting company.
+  VeeMax is Maxime Vincent's embedded hardware consulting company.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://www.veemax.be" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: maximevince
