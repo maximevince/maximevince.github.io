@@ -78,6 +78,9 @@ author:
     - label: "GitHub: maximevince"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/maximevince"
+    - label: "Zephyr Technical Contributor"
+      icon: "fas fa-fw fa-code"
+      url: "https://www.credly.com/badges/b6179b2b-d82f-4aa2-8162-c1445043bcda/public_url"
 
 footer:
   links:
