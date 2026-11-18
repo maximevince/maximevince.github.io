@@ -1,0 +1,46 @@
+# Table 1 and the chip in Figure 1. Exactly eight rows: rows 1-4 are the
+# left-hand pins (top to bottom), rows 5-8 the right-hand pins (bottom to
+# top), like a real SO-8. Keep `name` short (max ~7 characters) so the label
+# fits next to the chip. `description` accepts markdown.
+
+- name: FW
+  type: firmware
+  title: Microcontroller firmware
+  description: Bare-metal and RTOS firmware, drivers and bootloaders, in C and Rust.
+
+- name: ULP
+  type: hardware
+  title: Extreme low-power electronics
+  description: Circuits and firmware designed together so a battery lasts as long as possible.
+
+- name: RF
+  type: hardware
+  title: Wireless communication and RF
+  description: Radio links and wireless protocols, Bluetooth LE included.
+
+- name: BRINGUP
+  type: hardware
+  title: Board bring-up
+  description: First power-on of a new board, through rails, clocks, debug access and drivers, until the firmware runs. Schematics and layout too, when a project needs them.
+
+- name: MOTOR
+  type: hardware
+  title: Motor controllers
+  description: Control electronics and the firmware that drives them.
+
+- name: LINUX
+  type: software
+  title: Embedded Linux
+  description: Kernel modules, cross toolchains and backports on constrained targets.
+
+- name: ZEPHYR
+  type: software
+  title: Zephyr RTOS
+  description: >-
+    Zephyr [Technical Contributor](https://www.credly.com/badges/b6179b2b-d82f-4aa2-8162-c1445043bcda/public_url),
+    including GDB debugging support for Zephyr.
+
+- name: DEBUG
+  type: tools
+  title: Debugging and reverse engineering
+  description: JTAG, GDB, logic analysers and protocol decoders, when hardware won't say what it's doing.

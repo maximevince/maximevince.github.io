@@ -1,0 +1,82 @@
+---
+layout: default
+section: writing
+---
+{%- comment -%}
+  Contents column: built from the <h2 id="..."> headings kramdown emits,
+  shown only when a post has at least two of them.
+  Code blocks: a header line with the language is added to every
+  Rouge block (<div class="language-xxx highlighter-rouge">).
+{%- endcomment -%}
+{%- assign h2parts = content | split: '<h2 id="' -%}
+{%- assign code_parts = content | split: '<div class="language-' -%}
+{%- capture body -%}
+{{ code_parts[0] }}
+{%- for part in code_parts offset: 1 -%}
+{%- assign lang = part | split: ' ' | first -%}
+{%- assign label = lang -%}
+{%- if lang == 'plaintext' or lang == 'text' %}{% assign label = 'text' %}{% endif -%}
+{%- capture head %}highlighter-rouge"><div class="code-head"><span>{{ label }}</span></div>{% endcapture -%}
+<div class="code language-{{ part | replace_first: 'highlighter-rouge">', head }}
+{%- endfor -%}
+{%- endcapture -%}
+{%- assign ex = page.excerpt | strip_html | strip | truncate: 80, '' -%}
+{%- assign plain = content | strip_html | strip -%}
+{%- assign words = plain | number_of_words -%}
+{%- assign minutes = words | plus: 199 | divided_by: 200 | at_least: 1 -%}
+<article>
+  <header class="wrap doc-head">
+    <div class="doc-kind mono"><span>{{ page.kind | default: 'Bench note' }}</span></div>
+    <div>
+      <h1 class="doc-title">{{ page.title | strip | escape }}</h1>
+      {%- if page.excerpt and ex != '' %}{% unless plain contains ex %}
+      <p class="doc-abstract">{{ page.excerpt | strip_html | strip }}</p>
+      {%- endunless %}{% endif %}
+      <dl class="doc-meta">
+        <div><dt>Published</dt><dd><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: '%Y-%m-%d' }}</time></dd></div>
+        {%- if page.last_modified_at %}
+        <div><dt>Updated</dt><dd><time datetime="{{ page.last_modified_at | date_to_xmlschema }}">{{ page.last_modified_at | date: '%Y-%m-%d' }}</time></dd></div>
+        {%- endif %}
+        <div><dt>Reading</dt><dd>{{ minutes }} min</dd></div>
+        {%- if page.tags.size > 0 %}
+        <div><dt>Tags</dt><dd>{% for t in page.tags %}<a href="{{ '/tags/' | relative_url }}#{{ t | slugify }}">{{ t }}</a>{% unless forloop.last %}, {% endunless %}{% endfor %}</dd></div>
+        {%- endif %}
+      </dl>
+      {%- if page.link %}
+      <p class="doc-link mono">Link: <a href="{{ page.link }}">{{ page.link | remove: 'https://' | remove: 'http://' }}</a></p>
+      {%- endif %}
+    </div>
+  </header>
+
+  <div class="wrap doc-body{% if h2parts.size < 3 %} no-toc{% endif %}">
+    {%- if h2parts.size > 2 %}
+    <nav class="toc" aria-labelledby="toc-title">
+      <h2 id="toc-title">Contents</h2>
+      <ol>
+        {%- for part in h2parts offset: 1 %}
+        {%- assign id = part | split: '"' | first %}
+        {%- assign heading = part | split: '</h2>' | first | remove_first: id | remove_first: '">' | strip_html | strip %}
+        <li><a href="#{{ id }}">{{ heading }}</a></li>
+        {%- endfor %}
+      </ol>
+    </nav>
+    {%- endif %}
+
+    <div class="prose">
+      {{ body }}
+
+      <nav class="doc-end" aria-label="More posts">
+        {%- if page.previous %}
+        <a href="{{ page.previous.url | relative_url }}"><small>Previous</small><span>{{ page.previous.title | strip | escape }}</span></a>
+        {%- else %}
+        <a href="{{ '/posts/' | relative_url }}"><small>Index</small><span>All writing</span></a>
+        {%- endif %}
+        {%- if page.next %}
+        <a href="{{ page.next.url | relative_url }}"><small>Next</small><span>{{ page.next.title | strip | escape }}</span></a>
+        {%- else %}
+        <a href="{{ '/posts/' | relative_url }}"><small>Index</small><span>All writing</span></a>
+        {%- endif %}
+      </nav>
+    </div>
+  </div>
+</article>

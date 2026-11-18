@@ -1,6 +1,6 @@
 ---
-title: "Posts by Tag"
+title: Posts by tag
+layout: archive
+group_by: tag
 permalink: /tags/
-layout: tags
-author_profile: true
 ---

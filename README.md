@@ -1,27 +1,41 @@
-# Minimal Mistakes remote theme starter
+# veemax.be
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+Source of [www.veemax.be](https://www.veemax.be), the site of VeeMax, Maxime
+Vincent's embedded systems consultancy, and his technical writing.
 
-Contains basic configuration to get you a site with:
+It is a plain [Jekyll](https://jekyllrb.com/) 4 site with its own small theme
+(no theme gem, no Sass, no JavaScript framework).
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+## Run it locally
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+Needs Ruby (3.x) and Bundler.
 
----
+```sh
+./install.sh   # bundle install (gems go into vendor/bundle)
+./serve.sh     # http://localhost:4000 with live reload
+```
 
-## Troubleshooting
+`bundle exec jekyll build` writes the static site to `_site/`.
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+## Where things live
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+| Path | What |
+| --- | --- |
+| `_data/home.yml` | Homepage copy: headline, intro, status note, call to action, About and Contact text |
+| `_data/expertise.yml` | The eight "pins": Table 1 and the chip in Figure 1 |
+| `_data/projects.yml` | The project table; `post_slug` links a project to its write-up |
+| `_data/navigation.yml` | Main menu |
+| `_posts/` | Published posts, URL `/:categories/:title/` (e.g. `/blog/...`) |
+| `_drafts/` | Unpublished drafts (preview with `bundle exec jekyll serve --drafts`) |
+| `_pages/` | About, archives (`/posts/`, `/tags/`, `/categories/`) and 404 |
+| `_layouts/`, `_includes/` | Templates |
+| `assets/css/style.css` | The whole stylesheet, light and dark palette at the top |
+| `assets/fonts/` | Self-hosted Archivo and IBM Plex Mono (SIL Open Font License) |
+
+Post front matter: `title`, `categories: [Blog]`, `tags`, optional `excerpt`
+(shown as the abstract), `image` (social preview) and `link`.
+
+## Deploy
+
+Pushing to the `gh-pages` branch builds and publishes the site with GitHub
+Actions (`.github/workflows/pages.yml`).

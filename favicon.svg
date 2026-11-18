@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <style>.r{fill:#b02a1e}.i{fill:#1c1a18}@media (prefers-color-scheme:dark){.r{fill:#f0544a}.i{fill:#f0ece6}}</style>
+  <path class="r" d="M16 5.78L31.19 13.38L16 20.98L0.81 13.38Z"/>
+  <path class="i" d="M7 13.38A2.44 1.22 0 1 0 11.88 13.38A2.44 1.22 0 1 0 7 13.38ZM31.19 14.83L16 22.43L0.81 14.83L0.81 18.22L16 25.81L31.19 18.22ZM29.48 20.7L32 21.96L28.55 23.68L26.02 22.42ZM2.52 20.7L0 21.96L3.45 23.68L5.98 22.42ZM24.41 23.23L26.94 24.49L23.48 26.22L20.96 24.95ZM7.59 23.23L5.06 24.49L8.52 26.22L11.04 24.95Z"/>
+</svg>
