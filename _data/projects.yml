@@ -1,0 +1,56 @@
+# Table 2. Fields:
+#   name         project name
+#   url          optional external link shown under the name
+#   description  markdown
+#   tags         "Built with" chips
+#   status       text shown in the Status column
+#   state        live | proto | wip  (filled dot, half dot, empty dot)
+#   post_slug    slug of the write-up in _posts/ (the part of the file name
+#                after the date). The name links to the post only when that
+#                post exists, so it is safe to fill this in before writing it.
+
+- name: PicoZorro
+  description: "An RP2350 microcontroller on the Amiga Zorro II bus: Ethernet, USB host and MP3 decoding, with no CPLD, FPGA or level shifters."
+  tags: [RP2350 PIO, Rust, PCB]
+  status: Rev A running
+  state: proto
+  post_slug: picozorro
+
+- name: Benchwatt
+  url: https://github.com/maximevince/benchwatt
+  description: "An open-source Linux desktop app, command line tool and Python package for bench power instruments: Otii Arc, GW Instek GPP, Nordic PPK2 and Joulescope JS220, straight over USB."
+  tags: [Rust, USB, Power profiling]
+  status: Early, working
+  state: proto
+  post_slug: benchwatt
+
+- name: AlarmCon
+  description: "Reverse engineering a late-90s CADDX Ranger 9000E alarm panel: sniffing the keypad bus, writing protocol decoders, dumping the EEPROM."
+  tags: [Logic analyser, EEPROM]
+  status: Working
+  state: proto
+  post_slug: alarmcon
+
+- name: MagicRemote
+  url: https://magicremote.veemax.be
+  description: A web app that remote-controls Blackmagic Design cinema cameras over Bluetooth LE, with nothing to install.
+  tags: [Web Bluetooth, BLE]
+  status: Early, working
+  state: live
+  post_slug: magicremote
+
+- name: OpenChessTrainer
+  url: https://openchesstrainer.com
+  description: "A free, open-source chess opening trainer that runs entirely in the browser: no backend and no account."
+  tags: [Static web app]
+  status: Live
+  state: live
+  post_slug: openchesstrainer
+
+- name: OpenGaz
+  url: https://opengaz.veemax.be
+  description: An open-source homage to Gazillionaire Deluxe, a turn-based space-trading game playable in the browser, solo, hot-seat or online.
+  tags: [Static web app, P2P]
+  status: Playable alpha
+  state: proto
+  post_slug: opengaz

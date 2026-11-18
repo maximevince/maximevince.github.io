@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<article>
+  <header class="wrap doc-head">
+    <div class="doc-kind mono"><span>{{ page.kind | default: 'Page' }}</span></div>
+    <div>
+      <h1 class="doc-title">{{ page.title | escape }}</h1>
+      {%- if page.lede %}
+      <p class="doc-abstract">{{ page.lede }}</p>
+      {%- endif %}
+    </div>
+  </header>
+  <div class="wrap doc-body no-toc">
+    <div class="prose page-prose">
+      {{ content }}
+    </div>
+  </div>
+</article>
