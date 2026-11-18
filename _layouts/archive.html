@@ -1,0 +1,43 @@
+---
+layout: default
+section: writing
+---
+{%- comment -%}
+  Writing archive. Front matter `group_by`: year | tag | category.
+{%- endcomment -%}
+<header class="wrap doc-head">
+  <div class="doc-kind mono"><span>Index</span></div>
+  <div>
+    <h1 class="doc-title">{{ page.title | escape }}</h1>
+    <p class="doc-abstract">{{ site.posts.size }} posts. Browse <a href="{{ '/posts/' | relative_url }}"{% if page.group_by == 'year' %} aria-current="page"{% endif %}>by year</a>, <a href="{{ '/tags/' | relative_url }}"{% if page.group_by == 'tag' %} aria-current="page"{% endif %}>by tag</a> or <a href="{{ '/categories/' | relative_url }}"{% if page.group_by == 'category' %} aria-current="page"{% endif %}>by category</a>, or follow the <a href="{{ '/feed.xml' | relative_url }}">RSS feed</a>.</p>
+  </div>
+</header>
+
+{%- if page.group_by == 'year' %}
+{%- assign groups = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+{%- elsif page.group_by == 'tag' %}
+{%- assign groups = site.tags | sort %}
+{%- else %}
+{%- assign groups = site.categories | sort %}
+{%- endif %}
+
+<div class="wrap doc-body archive">
+  <nav class="toc" aria-labelledby="toc-title">
+    <h2 id="toc-title">{% if page.group_by == 'tag' %}Tags{% elsif page.group_by == 'year' %}Years{% else %}Categories{% endif %}</h2>
+    <ul class="tag-cloud">
+      {%- for g in groups %}
+      {%- if page.group_by == 'year' %}{% assign name = g.name %}{% assign n = g.items.size %}{% else %}{% assign name = g[0] %}{% assign n = g[1].size %}{% endif %}
+      <li><a href="#{{ name | slugify }}">{{ name }} <span class="mono">{{ n }}</span></a></li>
+      {%- endfor %}
+    </ul>
+  </nav>
+  <div class="archive-groups">
+    {%- for g in groups %}
+    {%- if page.group_by == 'year' %}{% assign name = g.name %}{% assign posts = g.items %}{% else %}{% assign name = g[0] %}{% assign posts = g[1] %}{% endif %}
+    <section class="archive-group" id="{{ name | slugify }}" aria-labelledby="h-{{ name | slugify }}">
+      <h2 class="archive-title" id="h-{{ name | slugify }}">{{ name }} <span class="mono">{{ posts.size }}</span></h2>
+      {% include post-list.html posts=posts %}
+    </section>
+    {%- endfor %}
+  </div>
+</div>

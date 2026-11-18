@@ -1,0 +1,70 @@
+# Homepage copy. Plain text unless noted; fields marked "markdown" accept
+# **bold** and [links](https://example.com).
+
+# Hero headline.
+headline: "Hardware, firmware, and the bug no one else found."
+
+# Line under the site header.
+docline: "firmware and hardware engineer, Belgium"
+
+# Intro paragraph under the headline (markdown).
+intro: >-
+  I'm Maxime Vincent. Through **VeeMax** I design and build embedded
+  products: microcontroller firmware, extreme low-power electronics, wireless
+  links, embedded Linux, and bringing up new boards. I also get called in
+  when a board misbehaves and nobody can say why. More than 16 years of it,
+  and still the thing I do for fun.
+
+# Availability note with the green status LED (markdown).
+status: >-
+  I'm VP of Engineering at [Finalmouse](https://www.finalmouse.com/).
+  Alongside that, VeeMax takes on selected consulting work.
+
+cta:
+  label: Get in touch
+  url: "#contact"
+secondary:
+  label: See the projects
+  url: "#projects"
+
+# Section intros (left column).
+sections:
+  expertise: What VeeMax works on, one pin per discipline.
+  projects: Open hardware, open firmware and web tools.
+  writing: "Notes from the bench: kernels, debuggers, bootloaders and old Amigas."
+
+# How many recent posts to list under Writing.
+writing_count: 6
+
+# About section (markdown, one paragraph per item).
+about:
+  - >-
+    I'm an embedded systems engineer based in Belgium, with more than 16 years
+    of experience in
+    microcontrollers, extreme low-power electronics and firmware, wireless
+    communication and RF, embedded Linux, motor controllers and board bring-up.
+  - >-
+    By day I'm VP of Engineering at [Finalmouse](https://www.finalmouse.com/).
+    Alongside that, VeeMax takes on selected consulting work: firmware,
+    low-power hardware, wireless links and the debugging in between.
+  - >-
+    On the creative side, I also record and produce videos, and design and
+    build custom electronics for my Amigas and for various things around the
+    house. My job is my hobby, and vice versa.
+
+contact:
+  # Intro sentence above the contact details (markdown).
+  lede: >-
+    Have a board that needs firmware, a battery budget that won't close, or a
+    radio link that drops? Send a short description and I'll reply.
+  # Extra rows after the e-mail address (which comes from _config.yml).
+  # A row without a url is shown as plain text.
+  links:
+    - label: Location
+      text: Belgium (Central European Time)
+    - label: GitHub
+      text: github.com/maximevince
+      url: https://github.com/maximevince
+    - label: Zephyr
+      text: Technical Contributor badge
+      url: https://www.credly.com/badges/b6179b2b-d82f-4aa2-8162-c1445043bcda/public_url

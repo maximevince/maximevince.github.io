@@ -1,0 +1,85 @@
+# Site-wide settings. Restart `./serve.sh` after editing this file.
+#
+# Homepage copy lives in _data/ (home.yml, expertise.yml, projects.yml),
+# the main menu in _data/navigation.yml.
+
+title: VeeMax
+tagline: Embedded systems engineering
+email: maxime@veemax.be
+description: >-
+  VeeMax is Maxime Vincent's embedded systems consultancy: firmware,
+  ultra-low-power design, wireless and RF, embedded Linux, Zephyr RTOS
+  and PCB design.
+baseurl: ""
+url: "https://www.veemax.be"
+lang: en
+timezone: Europe/Brussels
+
+# Used by jekyll-seo-tag and the templates.
+author:
+  name: Maxime Vincent
+  url: https://www.veemax.be/about/
+logo: /assets/images/bio-photo.jpg
+social:
+  name: Maxime Vincent
+  links:
+    - https://github.com/maximevince
+    - https://twitter.com/maximevince
+twitter:
+  username: maximevince
+  card: summary_large_image
+github_username: maximevince
+zephyr_badge: https://www.credly.com/badges/b6179b2b-d82f-4aa2-8162-c1445043bcda/public_url
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    disable: false
+
+# Existing post URLs look like /blog/<title>/; do not change.
+permalink: /:categories/:title/
+
+include:
+  - _pages
+
+exclude:
+  - README.md
+  - install.sh
+  - serve.sh
+  - Gemfile
+  - Gemfile.lock
+  - vendor/
+  - .bundle/
+  - .idea/
+  - .github/
+  - .jekyll-cache/
+
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+  - jemoji
+
+feed:
+  path: feed.xml
+
+defaults:
+  # Social preview image unless a page sets its own `image`.
+  - scope:
+      path: ""
+    values:
+      image: /assets/images/og-default.png
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+  - scope:
+      path: "_pages"
+      type: pages
+    values:
+      layout: page

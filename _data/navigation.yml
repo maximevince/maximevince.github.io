@@ -1,0 +1,14 @@
+# Main menu. `section` marks which item is highlighted on inner pages.
+main:
+  - title: Expertise
+    url: /#expertise
+  - title: Projects
+    url: /#projects
+  - title: Writing
+    url: /posts/
+    section: writing
+  - title: About
+    url: /about/
+    section: about
+  - title: Contact
+    url: /#contact

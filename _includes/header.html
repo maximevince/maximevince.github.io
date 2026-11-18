@@ -1,0 +1,23 @@
+{%- assign section = page.section | default: layout.section -%}
+<header class="wrap runhead">
+  <a class="brand" href="{{ '/' | relative_url }}"{% if page.url == '/' %} aria-current="page"{% endif %}>
+    {% include veemax-logo.svg %}
+    <span class="brand-sub mono">{{ site.tagline }}</span>
+  </a>
+  <nav class="nav" aria-label="Main">
+    {%- for item in site.data.navigation.main %}
+    <a href="{{ item.url | relative_url }}"{% if item.section and item.section == section %} aria-current="page"{% endif %}>{{ item.title }}</a>
+    {%- endfor %}
+  </nav>
+  <button class="theme-toggle mono" type="button" hidden aria-label="Switch between light and dark">dark</button>
+</header>
+<div class="wrap docline mono">
+  {%- if page.collection == 'posts' %}
+  <span><a href="{{ '/posts/' | relative_url }}">Writing</a> / {{ page.date | date: '%Y' }} / {{ page.slug }}</span>
+  {%- elsif include.docline %}
+  <span>{{ include.docline }}</span>
+  {%- else %}
+  <span><b>{{ site.author.name }}</b>, {{ site.data.home.docline }}</span>
+  {%- endif %}
+  <span>veemax.be</span>
+</div>
