@@ -1,0 +1,22 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>
+  /* Apply a stored light/dark choice before first paint. */
+  (function () {
+    try {
+      var m = localStorage.getItem("veemax-mode");
+      if (m === "light" || m === "dark") document.documentElement.setAttribute("data-mode", m);
+    } catch (e) {}
+  })();
+</script>
+{% seo %}
+{% feed_meta %}
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f9f8f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#1a1917" media="(prefers-color-scheme: dark)">
+<link rel="preload" href="{{ '/assets/fonts/archivo-latin-standard-normal.woff2' | relative_url }}" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+<link rel="icon" href="{{ '/favicon.svg' | relative_url }}" type="image/svg+xml">
+<link rel="icon" href="{{ '/favicon.ico' | relative_url }}" sizes="32x32">
+<link rel="apple-touch-icon" href="{{ '/apple-touch-icon.png' | relative_url }}">
+<script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>

@@ -1,6 +1,6 @@
 ---
-title: "Posts by Year"
+title: Writing
+layout: archive
+group_by: year
 permalink: /posts/
-layout: posts
-author_profile: true
 ---

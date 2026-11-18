@@ -1,0 +1,31 @@
+{%- comment -%}
+  Figure 1: SO-8 pinout. Pin labels come from _data/expertise.yml.
+  Pins 1-4 run down the left side, 5-8 back up the right side.
+{%- endcomment -%}
+{%- assign pins = site.data.expertise -%}
+<figure class="front-fig">
+  <svg class="pinout" viewBox="70 14 380 356" role="img" aria-labelledby="fig1-t">
+    <title id="fig1-t">Pinout-style diagram of VeeMax's {{ pins.size }} areas of expertise; each pin links to its row in the pin functions table.</title>
+    <path class="dim" d="M175 34 V48 M345 34 V48 M175 41 H345"/>
+    <path class="dim-arrow" d="M175 41 l6 -3 v6 z M345 41 l-6 -3 v6 z"/>
+    <text class="dimtxt" x="260" y="30" text-anchor="middle">top view</text>
+    <rect class="body" x="175" y="62" width="170" height="262" rx="3"/>
+    <circle class="dot" cx="195" cy="82" r="5"/>
+    <text class="chipname" x="260" y="198" text-anchor="middle">{{ site.title }}</text>
+    <text class="chipsub" x="260" y="218" text-anchor="middle">M. Vincent</text>
+    {%- for pin in pins limit: 8 %}
+    {%- assign n = forloop.index %}
+    {%- if n <= 4 %}
+    {%- assign y = forloop.index0 | times: 62 | plus: 88 %}
+    <a href="#pin-{{ n }}"><rect class="pin p{{ n }}" x="141" y="{{ y }}" width="34" height="18"/><text class="lbl" x="128" y="{{ y | plus: 14 }}" text-anchor="end">{{ pin.name }}</text></a>
+    <text class="lbl-num" x="186" y="{{ y | plus: 13 }}">{{ n }}</text>
+    {%- else %}
+    {%- assign y = 8 | minus: n | times: 62 | plus: 88 %}
+    <a href="#pin-{{ n }}"><rect class="pin p{{ n }}" x="345" y="{{ y }}" width="34" height="18"/><text class="lbl" x="392" y="{{ y | plus: 14 }}">{{ pin.name }}</text></a>
+    <text class="lbl-num" x="334" y="{{ y | plus: 13 }}" text-anchor="end">{{ n }}</text>
+    {%- endif %}
+    {%- endfor %}
+    <text class="dimtxt" x="260" y="356" text-anchor="middle">SO-8, not to scale</text>
+  </svg>
+  <figcaption class="figcap mono"><b>Figure 1.</b> Pin configuration. Pin functions are listed in Table 1.</figcaption>
+</figure>

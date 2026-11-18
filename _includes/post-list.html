@@ -1,0 +1,6 @@
+{%- comment -%} List of posts as .notes rows. Pass posts=... {%- endcomment -%}
+<ul class="notes">
+  {%- for post in include.posts %}
+  <li><a href="{{ post.url | relative_url }}"><time class="mono" datetime="{{ post.date | date: '%Y-%m-%d' }}">{{ post.date | date: '%Y-%m-%d' }}</time><span class="note-title">{{ post.title | strip | escape }}</span><span class="note-topic mono">{{ post.tags | slice: 0, 2 | join: ', ' }}</span></a></li>
+  {%- endfor %}
+</ul>
