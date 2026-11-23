@@ -10,8 +10,8 @@
 #                post exists, so it is safe to fill this in before writing it.
 
 - name: PicoZorro
-  description: "An RP2350 microcontroller on the Amiga Zorro II bus: Ethernet, USB host and MP3 decoding, with no CPLD, FPGA or level shifters."
-  tags: [RP2350 PIO, Rust, PCB]
+  description: "An RP2350 microcontroller on the Amiga Zorro II bus: Ethernet, USB host and MP3 decoding, with no CPLD, FPGA or level shifters. And an RTG card coming up next!"
+  tags: [RP2350 PIO, Rust, PCB, Amiga]
   status: Rev A running
   state: proto
   post_slug: picozorro
@@ -27,8 +27,8 @@
 - name: AlarmCon
   description: "Reverse engineering a late-90s CADDX Ranger 9000E alarm panel: sniffing the keypad bus, writing protocol decoders, dumping the EEPROM."
   tags: [Logic analyser, EEPROM]
-  status: Working
-  state: proto
+  status: Working, private
+  state: live
   post_slug: alarmcon
 
 - name: MagicRemote
@@ -42,7 +42,7 @@
 - name: OpenChessTrainer
   url: https://openchesstrainer.com
   description: "A free, open-source chess opening trainer that runs entirely in the browser: no backend and no account."
-  tags: [Static web app]
+  tags: [Static web app, Chess]
   status: Live
   state: live
   post_slug: openchesstrainer
@@ -50,7 +50,7 @@
 - name: OpenGaz
   url: https://opengaz.veemax.be
   description: An open-source homage to Gazillionaire Deluxe, a turn-based space-trading game playable in the browser, solo, hot-seat or online.
-  tags: [Static web app, P2P]
+  tags: [Static web app, P2P, Games]
   status: Playable alpha
   state: proto
   post_slug: opengaz

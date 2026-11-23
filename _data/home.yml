@@ -10,7 +10,7 @@ docline: "firmware and hardware engineer, Belgium"
 # Intro paragraph under the headline (markdown).
 intro: >-
   I'm Maxime Vincent. Through **VeeMax** I design and build embedded
-  products: microcontroller firmware, extreme low-power electronics, wireless
+  products: microcontroller firmware, ultra low-power electronics, wireless
   links, embedded Linux, and bringing up new boards. I also get called in
   when a board misbehaves and nobody can say why. More than 16 years of it,
   and still the thing I do for fun.
@@ -29,7 +29,7 @@ secondary:
 
 # Section intros (left column).
 sections:
-  expertise: What VeeMax works on, one pin per discipline.
+  expertise: What VeeMax works on, one pin per topic.
   projects: Open hardware, open firmware and web tools.
   writing: "Notes from the bench: kernels, debuggers, bootloaders and old Amigas."
 
@@ -61,7 +61,7 @@ contact:
   # A row without a url is shown as plain text.
   links:
     - label: Location
-      text: Belgium (Central European Time)
+      text: Hasselt, Belgium (Central European Time)
     - label: GitHub
       text: github.com/maximevince
       url: https://github.com/maximevince

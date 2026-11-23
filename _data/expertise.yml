@@ -10,7 +10,7 @@
 
 - name: ULP
   type: hardware
-  title: Extreme low-power electronics
+  title: Ultra low-power electronics
   description: Circuits and firmware designed together so a battery lasts as long as possible.
 
 - name: RF
@@ -18,29 +18,29 @@
   title: Wireless communication and RF
   description: Radio links and wireless protocols, Bluetooth LE included.
 
-- name: BRINGUP
+- name: BBU
   type: hardware
   title: Board bring-up
   description: First power-on of a new board, through rails, clocks, debug access and drivers, until the firmware runs. Schematics and layout too, when a project needs them.
 
-- name: MOTOR
+- name: MC
   type: hardware
   title: Motor controllers
   description: Control electronics and the firmware that drives them.
 
-- name: LINUX
+- name: LNX
   type: software
   title: Embedded Linux
   description: Kernel modules, cross toolchains and backports on constrained targets.
 
-- name: ZEPHYR
+- name: RTOS
   type: software
-  title: Zephyr RTOS
+  title: Zephyr RTOS, Embassy
   description: >-
     Zephyr [Technical Contributor](https://www.credly.com/badges/b6179b2b-d82f-4aa2-8162-c1445043bcda/public_url),
-    including GDB debugging support for Zephyr.
+    including GDB debugging support for Zephyr. [Embassy Async framework](https://embassy.dev) in Rust is also one of my recent favourites, with multiple contributions made. 
 
-- name: DEBUG
+- name: DBG
   type: tools
   title: Debugging and reverse engineering
-  description: JTAG, GDB, logic analysers and protocol decoders, when hardware won't say what it's doing.
+  description: JTAG, SWD, GDB, logic analysers and protocol decoders, when hardware won't say what it's doing.
